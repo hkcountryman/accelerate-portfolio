@@ -6,7 +6,6 @@ import React from "react";
 
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
@@ -24,7 +23,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box p={0}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -74,8 +73,7 @@ export function App() {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      <AppBar position="static">
+      <AppBar position="static" elevation={0}>
         <Topbar />
         <Tabs
           variant="fullWidth"
@@ -83,26 +81,26 @@ export function App() {
           onChange={handleChange}
           aria-label="project nav tabs"
         >
-          <LinkTab label="Front-End To-Do List" href="/todo" {...a11yProps(0)} />
-          <LinkTab label="Contact List" href="/contacts" {...a11yProps(1)} />
-          <LinkTab label="Trivia Quiz" href="/trivia" {...a11yProps(2)} />
+          <LinkTab label={<span style={{fontSize:"1rem"}}>Front-End To-Do List</span>} href="/todo" {...a11yProps(0)} />
+          <LinkTab label={<span style={{fontSize:"1rem"}}>Contact List</span>} href="/contacts" {...a11yProps(1)} />
+          <LinkTab label={<span style={{fontSize:"1rem"}}>Trivia</span>} Quiz href="/trivia" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         <Embed
-          text="testing"
+          lab={0}
           url="https://accelerate-lab-1-to-do.netlify.app/"
         />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Embed
-          text="testing"
+          lab={1}
           url="https://accelerate-lab-2-contacts.netlify.app/"
         />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Embed
-          text="testing"
+          lab={2}
           url="https://accelerate-lab-3-server.netlify.app/"
         />
       </TabPanel>

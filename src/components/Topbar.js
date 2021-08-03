@@ -82,7 +82,7 @@ export default function Topbar() {
           </Grow>
         )}
       </Popper> */}
-      <Typography variant="h6" className={classes.title}>
+      <Typography variant="h4" className={classes.title}>
         IBM Accelerate Projects
       </Typography>
     </Toolbar>
